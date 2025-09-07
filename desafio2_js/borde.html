@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column;">
+        <div id="border" style="height: 200px; width: 200px;"></div>
+        <div style="display: flex; align-items: center; justify-content: center; margin-top: 10px;">
+            <button onclick="Pintar('black')">Pintar Negro</button>
+            <button onclick="Pintar('green')">Pintar Verde</button>
+            <button onclick="Pintar('blue')">Pintar Azul</button>
+            <button onclick="agregarBorde()">Agregar Borde</button>
+            <button onclick="quitarBorde()">Quitar Borde</button>
+        </div>
+    </div>
+
+    <script>
+        function Pintar(color) {
+            let elemento = document.getElementById("border");
+            elemento.style.backgroundColor = color;
+        }
+
+        function agregarBorde() {
+            let elemento = document.getElementById("border");
+            elemento.style.border = "20px solid black"; 
+        }
+
+        function quitarBorde() {
+            let elemento = document.getElementById("border");
+            elemento.style.border = "none"; 
+        }
+    </script>
+</body>
+</html>

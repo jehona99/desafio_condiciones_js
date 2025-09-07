@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stickers</title>
+  <style>
+    .orden {
+      display: flex;
+      gap: 20px;
+    }
+
+    .img1, .img2, .img3 {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .img1 { background-color: blue; }
+    .img2 { background-color: rgb(218, 99, 13); }
+    .img3 { background-color: rgb(211, 168, 9); }
+
+    .orden div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input[type="number"] {
+      margin-top: 10px;
+      width: 60px;
+      text-align: center;
+    }
+
+    #mensaje {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="orden">
+    <div>
+      <div class="img1"></div>
+      <input type="number" id="input1" min="0" value="0">
+    </div>
+
+    <div>
+      <div class="img2"></div>
+      <input type="number" id="input2" min="0" value="0">
+    </div>
+
+    <div>
+      <div class="img3"></div>
+      <input type="number" id="input3" min="0" value="0">
+    </div>
+  </section>
+
+  <button onclick="verificarStickers()">Verificar</button>
+  <p id="mensaje"></p>
+
+  <script>
+    function verificarStickers() {
+      const valor1 = parseInt(document.getElementById("input1").value) || 0;
+      const valor2 = parseInt(document.getElementById("input2").value) || 0;
+      const valor3 = parseInt(document.getElementById("input3").value) || 0;
+
+      const total = valor1 + valor2 + valor3;
+
+      const mensaje = document.getElementById("mensaje");
+
+      if (total > 10) {
+        mensaje.textContent = "Qué pasó, son muchos stikers";
+      } else {
+        mensaje.textContent = `Llevas ${total} stikers`;
+      }
+    }
+  </script>
+
+</body>
+</html>
